@@ -1,0 +1,24 @@
+\documentclass[twocolumn,a4paper]{article}
+\usepackage{wasysym}
+\usepackage{tcolorbox}
+\usepackage[a4paper,margin=5mm,top=10mm]{geometry}
+\usepackage{array,tabularx}
+\usepackage{supertabular}
+\usepackage{colortbl}
+\tcbuselibrary{breakable}
+\pagestyle{empty}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\tcbsetforeverylayer{colback=white}
+
+\begin{document}
+%\tableofcontents
+\input{npctoc}
+
+\clearpage
+%\chapter{The NPC List}
+\input{npcgen}
+
+\clearpage
+%\chapter{Indices}
+\input{npcindex}
+\end{document}
