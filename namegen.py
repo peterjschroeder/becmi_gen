@@ -65,10 +65,10 @@ def get_namegen(race, origin, region=None):
     # Try loading from race
     try : return  import_module('names.'+norm_race).get_name
     except Exception : pass
-#    def error_gn(gender='m',cclass=None):
-#        print ("Name generator not available for "+origin+' '+race)
-#        return "Unnamed "+origin+' '+race
     def error_gn(gender='m',cclass=None):
+        print ("Name generator not available for "+origin+' '+race)
+        print ("Using namemaker.")
+
         import namemaker
         if gender == 'm':
             first_names = namemaker.make_name_set('male first names.txt')

@@ -75,7 +75,7 @@ def get_npc_list(args):
 def genpdf(args):
     npclist = get_npc_list(args)
     with open("npctoc.tex", "w") as fout :
-        fout.write("\\begin{tcolorbox}[breakable, title=Table of Contents]\n\\begin{supertabular}{p{0.8\columnwidth}r}\n")
+        fout.write("\\begin{tcolorbox}[breakable, title=Table of Contents]\n\\begin{supertabular}{p{0.8\\columnwidth}r}\n")
         for n in npclist :
             fout.write('{:50} & \\pageref{{{:5}}}\\\\\n'.format(n.name, str(n.uuid)))   
         fout.write("\\end{supertabular}\n\\end{tcolorbox}")
@@ -88,14 +88,14 @@ def genpdf(args):
     npclist = [ (n.name, n.cclass, n.level) for n in npclist ]
     with open("npcindex.tex", "w") as fout :
         npclist.sort(key=lambda t : t[-1]) # sort by level
-        fout.write("\\begin{tcolorbox}[breakable, title=Index by level]\n\\begin{supertabular}{p{0.6\columnwidth}lr}\n")
+        fout.write("\\begin{tcolorbox}[breakable, title=Index by level]\n\\begin{supertabular}{p{0.6\\columnwidth}lr}\n")
         for i in range(len(npclist)):
             name, cclass, level = npclist[i]
             fout.write('{:50} & {:15} & {:5}\\\\\n'.format(name, cclass, level))    
         fout.write("\\end{supertabular}\n\\end{tcolorbox}\n")
         fout.write("\\clearpage\n")
         npclist.sort(key=lambda t : t[1]) # sort by class
-        fout.write("\\begin{tcolorbox}[breakable, title=Index by class]\n\\begin{supertabular}{p{0.6\columnwidth}lr}\n")
+        fout.write("\\begin{tcolorbox}[breakable, title=Index by class]\n\\begin{supertabular}{p{0.6\\columnwidth}lr}\n")
         for i in range(len(npclist)):
             name, cclass, level = npclist[i]
             fout.write('{:50} & {:15} & {:5}\\\\\n'.format(name, cclass, level))    

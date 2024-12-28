@@ -30,4 +30,4 @@ if __name__ == '__main__' :
    if len(argv)>1 :
       if argv[1] in ['male', 'm', '-m'] : gender='m'
       if argv[1] in ['female', 'f', '-f'] : gender='f'
-   print get_name(gender)	 
+   print (get_name(gender))	 

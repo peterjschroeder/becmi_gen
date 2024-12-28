@@ -51,7 +51,7 @@ if __name__ == '__main__' :
       if argv[1] in ['female', 'f', '-f'] : gender='f'
    res=get_name(gender)	 
    try:
-       print res
+       print (res)
    except Exception :
-       print 'Sorry, accented i or y not available...'
-       print res.encode('ascii','replace')
+       print ('Sorry, accented i or y not available...')
+       print (res.encode('ascii','replace'))

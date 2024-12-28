@@ -8,7 +8,7 @@ back = [ 'ulf', 'vild', 'gar', 'vig', 'mir', 'ric', 'gund', 'mund', 'prand', 'hi
 back_female = [ 'a' ]
 
 def process(s):
-   s=unicode(s)
+   s=str(s)
    import re
    # Replace duplicate "ou" groups
    p=re.compile('ou')
@@ -35,7 +35,7 @@ if __name__ == '__main__' :
       if argv[1] in ['female', 'f', '-f'] : gender='f'
    res=get_name(gender)	 
    try:
-       print res
+       print (res)
    except Exception :
-       print 'Sorry, accented i or y not available...'
-       print res.encode('ascii','replace')
+       print ('Sorry, accented i or y not available...')
+       print (res.encode('ascii','replace'))

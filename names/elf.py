@@ -10,7 +10,7 @@ back_female = [ "el", "eth", "n", "s", "len", "dil", "dyl", "fel", "gin",  "ster
 
 
 def process(s):
-   s=unicode(s)
+   s=str(s)
    import re
    # Replace duplicate "th" groups
    p=re.compile('thth')
@@ -23,19 +23,19 @@ def process(s):
    s=p.sub('\\1e\\2',s)
    # Replace duplicate "i" with "^i"
    p=re.compile('ii')
-   s=p.sub('\^i',s)
+   s=p.sub(r'\^i',s)
    # Replace "iy" with "'i"
    p=re.compile('iy')
    s=p.sub("\'i",s)
    # Replace "yi" with "'i"
    p=re.compile('yi')
-   s=p.sub('\`i',s)
+   s=p.sub(r'\`i',s)
    # Replace duplicate "e" with "^e"
    p=re.compile('ee')
-   s=p.sub('\^e',s)
+   s=p.sub(r'\^e',s)
    # Replace duplicate "y" with "^y"
    p=re.compile('yy')
-   s=p.sub('\^y',s)
+   s=p.sub(r'\^y',s)
    return s
 
 def get_name(gender):
@@ -52,7 +52,7 @@ if __name__ == '__main__' :
       if argv[1] in ['female', 'f', '-f'] : gender='f'
    res=get_name(gender)	 
    try:
-       print res
+       print (res)
    except Exception :
-       print 'Sorry, accented i or y not available...'
-       print res.encode('ascii','replace')
+       print ('Sorry, accented i or y not available...')
+       print (res.encode('ascii','replace'))

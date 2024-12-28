@@ -4,8 +4,8 @@ from flask import Flask, request, redirect, send_from_directory
 
 wapp = Flask(__name__, static_url_path='')
 wapp.debug=True
-print wapp.root_path
-print wapp.instance_path
+print (wapp.root_path)
+print (wapp.instance_path)
 
 @wapp.route('/')
 @wapp.route('/index')
@@ -50,16 +50,16 @@ def generator():
 	from os import system
 	system('rm -f '+wapp.root_path+'/npcs.pdf')
 	# Start generation
-	print 'Initializing generator'
+	print ('Initializing generator')
 	from genpdf import genpdf
 	region='Norwold'
 	lmin, lmax = 1, 36
 	lnum = 16
 	lavg = 18
 	npc_party=0
-	print 'Reading parameter'
+	print ('Reading parameter')
 	d = dict(request.args)
-	print d
+	print (d)
 	try : 
 		region=d['region'][0]
 		lmin = int(d['lmin'][0])
@@ -67,14 +67,14 @@ def generator():
 		lnum = int(d['lnum'][0])
 		lavg = int(d['lavg'][0])
 		npc_party=lavg if 'npcparty' in d.keys() else 0
-	except Exception, e: 
-		print e
-		print request
+	except Exception(e): 
+		print (e)
+		print (request)
 	args = Args(lnum,lmin,lmax,region,npc_party)
-	print 'Running genpdf'
-	print args
+	print ('Running genpdf')
+	print (args)
 	genpdf(args)
-	print 'Sending file'
+	print ('Sending file')
 	return send_from_directory(wapp.root_path, 'npcs.pdf')
 
 @wapp.after_request

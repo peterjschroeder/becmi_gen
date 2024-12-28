@@ -204,7 +204,7 @@ gender        gender of the NPC (default male)'''
 {} {} {} {}
 """.format(self.name, self.align, self.race, self.cclass, self.level)
 
-        res += '\n' + 'HP: ' + self.hp + '\n\n'
+        res += '\n' + 'HP: ' + str(self.hp) + '\n\n'
 
         res += """
 Str {p[str]:{width}}  Int {p[int]:{width}}  Wis {p[wis]:{width}} 

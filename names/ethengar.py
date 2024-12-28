@@ -12,5 +12,5 @@ def get_name(gender='m'):
 	else : return choice(female_names)+ ' of Clan '+choice(female_names)
 
 if __name__ == '__main__' :
-	print get_name()
+	print (get_name())
 

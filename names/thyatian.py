@@ -10,7 +10,7 @@ back_male_surname = back_male + [ 'anicus', 'ianicus', 'icus', 'cus', 'anitas', 
 back_female_surname = back_female + [ 'ica', 'ianica', 'ca', 'anita', 'aria' ]
 
 def process(s):
-   s=unicode(s)
+   s=str(s)
    import re
    # Replace duplicate "th" groups
    p=re.compile('thth')
@@ -39,4 +39,4 @@ if __name__ == '__main__' :
       if argv[1] in ['male', 'm', '-m'] : gender='m'
       if argv[1] in ['female', 'f', '-f'] : gender='f'
    res=get_name(gender)	 
-   print res
+   print (res)

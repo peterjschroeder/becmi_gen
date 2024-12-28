@@ -11,7 +11,7 @@ back_female = [ "a", "essa", "assa", "il", "agh", "linn", "atha" ]
 clans = [ "Divotfoot", "Nimblefingers", "Gardener", "Merrybrook", "Highthicket", "Lowhill", "Harborhin", "Ironside", "Tremblay", "Gagnon", "Fortin", "Bouchard" ]
 
 def process(s):
-	s=unicode(s)
+	s=str(s)
 	import re
 	# Replace duplicate "th" groups
 	p=re.compile('thth')
@@ -42,4 +42,4 @@ if __name__ == '__main__' :
       if argv[1] in ['male', 'm', '-m'] : gender='m'
       if argv[1] in ['female', 'f', '-f'] : gender='f'
    res=get_name(gender)	 
-   print res
+   print (res)

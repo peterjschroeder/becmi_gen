@@ -16,4 +16,4 @@ if __name__ == '__main__' :
       if argv[1] in ['male', 'm', '-m'] : gender='m'
       if argv[1] in ['female', 'f', '-f'] : gender='f'
    res=get_name(gender)	 
-   print res
+   print (res)

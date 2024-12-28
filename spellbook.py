@@ -94,7 +94,7 @@ if __name__ == "__main__" :
 	level=int(argv[1]) if len(argv)>1 else 1
 	s = get_spellbook('Elf', level)
 	l=s.keys()
-	l.sort()
+	l=sorted(l)
 	for i in l :
 		print (i, s[i])
  
