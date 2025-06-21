@@ -67,6 +67,7 @@ def get_namegen(race, origin, region=None):
     except Exception : pass
     def error_gn(gender='m',cclass=None):
         print ("Name generator not available for "+origin+' '+race)
+#        return "Unnamed "+origin+' '+race
         print ("Using namemaker.")
 
         import namemaker

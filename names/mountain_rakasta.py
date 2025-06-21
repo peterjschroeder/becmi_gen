@@ -3,7 +3,7 @@ from random import choice, randint
 
 back = [ 'rrgai', "rrk'os", 'rren', 'rrtthogh', 'sa', 'ta', 'yah', 'tthe',  'derrba', 'cho', 'xath' ]
 front = [ 'Tsa', 'Sas', 'Gah', 'Des', 'Bes', 'Dlie', 'Taghe', 'Denie', 'Tha', 'Tsi', 'Lue' ]
-clans = [ 'Delgaike', 'Delzenke', 'Delk\'oske', 'Deltseske', 'Delbaike', 'Y\\\'ath\\\'o\\ce', 'Sastses', 'Dl\\\'ie', 'Ta\\\'a', 'Gah', 'Dzen' ]
+clans = [ 'Delgaike', 'Delzenke', 'Delk\'oske', 'Deltseske', 'Delbaike', 'Y\'ath\'oce', 'Sastses', 'Dl\'ie', 'Ta\'a', 'Gah', 'Dzen' ]
 
 def process(s):
 	s=str(s)
@@ -15,7 +15,7 @@ def process(s):
 
 def get_name(gender='m'):
    res = choice(front) + '-' + choice(back)
-   res += ' of the ' + choice(clans) + ' Ch\\\'ize'
+   res += ' of the ' + choice(clans) + ' Ch\'ize'
    res = process(res)
    return res
 

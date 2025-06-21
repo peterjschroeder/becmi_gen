@@ -12,7 +12,7 @@ back_male = [ "om", "tep", "ses", "thep", "se", "mon", "urt", "mun", "nal", "lam
 back_female = [ "theti", "titi", "yat", "ra", "ma", "sri", "sra", "lam", "tri", "na", "mun", "kha", "shet" ] 
 
 def process(s):
-   s=unicode(s)
+   s=str(s)
    import re
    # Replace duplicate "th" groups
    p=re.compile('thth')
